@@ -47,9 +47,11 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_deregister_script('jquery');
 
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', true);
+		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2
+	.1', true);
 
-		wp_enqueue_script('parallax-js', get_stylesheet_directory_uri() . '/library/js/parallax.min.js', array(), '', true);
+		wp_enqueue_script('parallax-js', get_stylesheet_directory_uri() . '/library/js/parallax.min.js', array(), '',
+            true);
 
 		// Deregister the jquery-migrate version bundled with WordPress.
 		wp_deregister_script('jquery-migrate');
