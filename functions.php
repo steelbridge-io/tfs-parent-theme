@@ -57,7 +57,6 @@ require_once ( 'library/add_tgm_plugins.php' );
 require_once ( 'library/custom-actions-hooks.php' );
 
 /** Adds custom meta fields */
-require_once ( 'library/meta-fields/custom-meta.php' );
 require_once ( 'library/meta-fields/marketing-meta.php' );
 require_once ( 'library/meta-fields/meta-fields-options.php');
 require_once ( 'library/inc/sanitize_default_fields.php' );
