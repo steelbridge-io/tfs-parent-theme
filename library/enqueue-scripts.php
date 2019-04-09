@@ -47,11 +47,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_deregister_script('jquery');
 
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2
-	.1', true);
+		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', true);
 
-		wp_enqueue_script('parallax-js', get_stylesheet_directory_uri() . '/library/js/parallax.min.js', array(), '',
-            true);
+		wp_enqueue_script('parallax-js', get_stylesheet_directory_uri() . '/library/js/parallax.min.js', array(), '', true);
 
 		// Deregister the jquery-migrate version bundled with WordPress.
 		wp_deregister_script('jquery-migrate');
@@ -284,10 +282,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 		$general_customizer_css .= '
 			
-			#topcardid {
+			#topcardid.card-section {
 				background-color: ' . $fp_topcard_bg_color . ';
 			}
-			.topcard .card-divider {
+			#top-card, #top-card h4 {
 				color: ' . $fp_topcard_label_color . ';
 			}
 			#topcardid, #topcardid h2, #topcardid p {
@@ -342,10 +340,21 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 			wp_add_inline_style( $load_sidebar_cta_temp_css, $sidebar_cta_temp_css );
 		}
 
+		$css_cutomizer_style = 'main-stylesheet';
+		$css_customizer = '';
+
+		$fptopbgcolor_color = get_theme_mod('fp-top-widget-bg-color');
 
 
+		$css_customizer .= ' 
+		
+		#top-cta {background-color: ' . $fptopbgcolor_color . ';}
+		
+		';
 
-
+		if( $css_customizer ) {
+		//	wp_add_inline_style( $css_cutomizer_style, $css_customizer );
+		}
 	} 
   endif; 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
