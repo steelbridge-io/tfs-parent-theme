@@ -9,6 +9,6 @@
 ?>
 
 <aside id="sidebar-right-sidebar" class="column small-12 medium-4">
-	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+	<?php dynamic_sidebar( 'sidebar-page' ); ?>
 </aside>
 

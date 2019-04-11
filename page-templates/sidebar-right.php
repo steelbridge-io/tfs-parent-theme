@@ -20,7 +20,7 @@ get_header(); ?>
 					<?php comments_template(); ?>
 				<?php endwhile; ?>
 			</main>
-			<?php get_sidebar('temp'); ?>
+			<?php get_sidebar('page'); ?>
 		</div>
 	</div>
 <?php

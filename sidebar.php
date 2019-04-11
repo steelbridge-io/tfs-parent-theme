@@ -8,5 +8,5 @@
 
 ?>
 <aside class="sidebar">
-	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+	<?php dynamic_sidebar( 'sidebar-blog' ); ?>
 </aside>
