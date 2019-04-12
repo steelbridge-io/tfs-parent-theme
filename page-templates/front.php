@@ -224,7 +224,7 @@ get_header(); ?>
 
 		<div id="sidecards" class="cell small-12 large-6">
 			<div id="topcard" class="topcard card">
-				<span class="topcard-label-refresh topcard-label-refresh-color"></span>
+				<span class="topcard-label-refresh topcard-image-refresh topcard-label-refresh-color"></span>
 				<div class="card-divider-before">
 					<?php $top_card_lable = get_theme_mod('fp-topcard-label'); ?>
 					<div id="top-card" class="card-divider card-divider-top">
@@ -239,10 +239,10 @@ get_header(); ?>
 			</div>
 
 			<div id="bottom-card" class="bottomcard card">
-				<span class="bottom-card-text-refresh"></span>
+				<span class="bottom-card-text-refresh bottom-card-img-refresh"></span>
 				<div class="card-divider-before">
+					<?php $fp_bottomcard_label = get_theme_mod( 'fp-bottomcard-label' ); ?>
 					<div class="card-divider card-divider-bottom">
-						<?php $fp_bottomcard_label =get_theme_mod( 'fp-bottomcard-label' ); ?>
 						<?php echo $fp_bottomcard_label; ?>
 					</div>
 				</div>

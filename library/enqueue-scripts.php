@@ -279,6 +279,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		$fp_topcard_txt_color = get_theme_mod ( 'fp-topcard-txt-color' );
 		$fp_bottomcard_bg_color = get_theme_mod ( 'fp-bottomcard-bg-color' );
 		$fp_bottomcard_txt_color = get_theme_mod ('fp-bottomcard-txt-color' );
+		$mk_grid_font_color	= get_theme_mod ('mk-grid-font-color');
 
 		$general_customizer_css .= '
 			
@@ -354,6 +355,71 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 		if( $css_customizer ) {
 		//	wp_add_inline_style( $css_cutomizer_style, $css_customizer );
+		}
+
+		$marketing_grid_bg_color = 'main-stylesheet';
+		$marketing_grid_customizer = '';
+
+		$mk_grid_bg_color = get_theme_mod('mk-grid-bg-color');
+
+
+		$marketing_grid_customizer .= ' 
+		
+		.marketing-site-content-section .marketing-site-content-section-block {
+		 background-color: ' . $mk_grid_bg_color . ';
+		 }';
+
+		if( $marketing_grid_customizer ) {
+				wp_add_inline_style( $marketing_grid_bg_color, $marketing_grid_customizer );
+		}
+
+		$marketing_grid_font_color = 'main-stylesheet';
+		$marketing_grid_customizer_font_color = '';
+
+		$mk_grid_font_color = get_theme_mod('mk-grid-font-color');
+
+
+		$marketing_grid_customizer_font_color .= '
+
+			.marketing-site-content-section-block-header,
+		 	.marketing-site-content-section-block-subheader.subheader{
+			color:'. $mk_grid_font_color .';
+			}' ;
+
+		if( $marketing_grid_customizer_font_color ) {
+			wp_add_inline_style( $marketing_grid_font_color, $marketing_grid_customizer_font_color );
+		}
+
+		$marketing_grid_button_color = 'main-stylesheet';
+		$marketing_grid_customizer_button_color = '';
+
+		$mk_grid_button_color = get_theme_mod('mk-grid-button-color');
+
+
+		$marketing_grid_customizer_button_color .= '
+
+			.mk-grid.round.button.small {
+			background-color:' . $mk_grid_button_color . ';
+			}';
+
+		if( $marketing_grid_customizer_button_color ) {
+			wp_add_inline_style( $marketing_grid_button_color, $marketing_grid_customizer_button_color );
+		}
+
+		$marketing_grid_button_font_color = 'main-stylesheet';
+		$marketing_grid_customizer_button_font_color = '';
+
+		$mk_grid_button_font_color = get_theme_mod('mk-grid-button-font-color');
+
+
+		$marketing_grid_customizer_button_font_color .= '
+
+			.mk-grid.round.button.small {
+			color:' . $mk_grid_button_font_color . ';
+			}';
+
+		if( $marketing_grid_customizer_button_font_color ) {
+			wp_add_inline_style( $marketing_grid_button_font_color, $marketing_grid_customizer_button_font_color );
 		}
 	} 
   endif; 

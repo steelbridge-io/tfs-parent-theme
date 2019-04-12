@@ -24,18 +24,19 @@ Template Name: Marketing Grid
 		<img src="<?php echo $marketing_image_left; ?>" alt="<?php echo $altl; ?>" />
 	</div>
 	<div class="marketing-site-content-section-block">
+		<span class="mk-grid-bg-color"></span>
 		<h3 class="marketing-site-content-section-block-header"><?php echo
 			$marketing_comment_title_right; ?></h3>
 		<p class="marketing-site-content-section-block-subheader subheader"><?php echo
 			$marketing_comment_right; ?></p>
-		<a href="<?php echo $marketing_left_readmore; ?>" class="round button small">read more</a>
+		<a href="<?php echo $marketing_left_readmore; ?>" class="mk-grid round button small">read more</a>
 	</div>
 	<div class="marketing-site-content-section-block small-order-2 medium-order-1">
 		<h3 class="marketing-site-content-section-block-header"><?php echo
 		$marketing_comment_title_left; ?></h3>
 		<p class="marketing-site-content-section-block-subheader subheader"><?php echo
 		$marketing_comment_left; ?></p>
-		<a href="<?php echo $marketing_left_readmore; ?>" class="round button small">read more</a>
+		<a href="<?php echo $marketing_left_readmore; ?>" class="mk-grid round button small">read more</a>
 	</div>
 	<div class="marketing-site-content-section-img small-order-1 medium-order-2">
 		<?php $get_image_url = get_post_meta(get_the_ID(), 'marketing-image-right', true);

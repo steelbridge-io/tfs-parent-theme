@@ -624,15 +624,15 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'section' => 'fp_card_section',
 					'settings' => 'fp-topcard-img',
 					'priority' => 10,
-					'sanitize_callback' => 'esc_url_raw',
+					//'sanitize_callback' => 'esc_url_raw',
 				)
 			)
 		);
 		// Top Card Image Selective Refresh
 		$wp_customize->selective_refresh->add_partial('fp-topcard-img', array(
-				'selector' 				=> '.topcard-label-refresh',
+				'selector' 				=> '.topcard-image-refresh',
 				'settings' 				=> 'fp-topcard-img',
-				'render_callback' => 'output'
+				'render_callback' => 'top_card_img'
 			)
 		);
 
@@ -797,14 +797,14 @@ if (! function_exists('wpt_register_theme_customizer')) :
 					'section' => 'fp_card_section',
 					'settings' => 'fp-bottomcard-img',
 					'priority' => 10,
-					'sanitize_callback' => 'esc_url_raw',
+					//'sanitize_callback' => 'esc_url_raw',
 				)
 			)
 		);
 		// Bottom Card Image Selective Refresh
 		$wp_customize->selective_refresh->add_partial('fp-bottomcard-img', array(
-				'selector' => '.bottom-card-text-refresh',
-				'settings' => array('fp-bottomcard-img'),
+				'selector' => '.bottom-card-img-refresh',
+				'settings' => 'fp-bottomcard-img',
 				'render_callback' => 'output'
 			)
 		);
@@ -1252,6 +1252,128 @@ if (! function_exists('wpt_register_theme_customizer')) :
 				)
 			)
 		);
+
+		//////////////// Marketing Template
+		// Marketing Section
+		$wp_customize->add_section('marketing-template-section', array(
+			'title' => __('Marketing Template', 'foundationpress'),
+			'priority' => 50,
+			'active_callback' => function () {
+				return is_page_template('page-templates/marketing-grid.php');
+			}
+		));
+
+		// Marketing Template Grid Backgound Color Setting
+		$wp_customize->add_setting('mk-grid-bg-color', array(
+				'default' => '#e6e6e6;',
+				'type' => 'theme_mod',
+				'transport' => 'postMessage',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		// Marketing Template Grid Background Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'mk-grid-bg-color', array(
+					'label' => __('Marketing Grid Background Color'),
+					'priority' => 10,
+					'section' => 'marketing-template-section',
+					'settings' => 'mk-grid-bg-color'
+				)
+			)
+		);
+		// Front Page Top Widget Selective Refresh Background color
+			$wp_customize->selective_refresh->add_partial('mk-grid-bg-color', array(
+				'selector' => '.mk-grid-bg-color',
+				'settings' => 'mk-grid-bg-color',
+				'render_callback' => 'output'
+			)
+		);
+		// Marketing Template Grid Font Color Setting
+		$wp_customize->add_setting('mk-grid-font-color', array(
+				'default' => '#8a8a8a;',
+				'type' => 'theme_mod',
+				'transport' => 'postMessage',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		// Marketing Template Grid Font Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'mk-grid-font-color', array(
+					'label' => __('Marketing Grid Font Color'),
+					'priority' => 10,
+					'section' => 'marketing-template-section',
+					'settings' => 'mk-grid-font-color'
+				)
+			)
+		);
+		// Marketing Template Font Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('mk-grid-font-color', array(
+				'selector' => '.mk-grid-bg-color',
+				'settings' => 'mk-grid-font-color',
+				'render_callback' => 'output'
+			)
+		);
+
+		// Marketing Template Button Color Setting
+		$wp_customize->add_setting('mk-grid-button-color', array(
+				'default' => '#1779ba;',
+				'type' => 'theme_mod',
+				'transport' => 'postMessage',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		// Marketing Template Grid Button Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'mk-grid-button-color', array(
+					'label' => __('Marketing Grid Button Color'),
+					'priority' => 10,
+					'section' => 'marketing-template-section',
+					'settings' => 'mk-grid-button-color'
+				)
+			)
+		);
+		// Marketing Template Button Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('mk-grid-button-color', array(
+				'selector' => '.mk-grid-bg-color',
+				'settings' => 'mk-grid-button-color',
+				'render_callback' => 'output'
+			)
+		);
+
+		// Marketing Template Button Font Color Setting
+		$wp_customize->add_setting('mk-grid-button-font-color', array(
+				'default' => '#ffffff;',
+				'type' => 'theme_mod',
+				'transport' => 'postMessage',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		// Marketing Template Grid Button Font Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'mk-grid-button-font-color', array(
+					'label' => __('Marketing Grid Button Font Color'),
+					'priority' => 10,
+					'section' => 'marketing-template-section',
+					'settings' => 'mk-grid-button-font-color'
+				)
+			)
+		);
+		// Marketing Template Button Font Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('mk-grid-button-font-color', array(
+				'selector' => '.mk-grid-bg-color',
+				'settings' => 'mk-grid-button-font-color',
+				'render_callback' => 'output'
+			)
+		);
+
 		// End of customizer options
 	}
 
