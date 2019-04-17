@@ -421,6 +421,76 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		if( $marketing_grid_customizer_button_font_color ) {
 			wp_add_inline_style( $marketing_grid_button_font_color, $marketing_grid_customizer_button_font_color );
 		}
+
+		$frontpage_blog = 'main-stylesheet';
+		$frontpage_blog_css = '';
+
+		$fp_blog_bg_color = get_theme_mod('fp-blog-bg-color');
+		$fp_blog_text_color	= get_theme_mod('fp-blog-text-color');
+
+		$frontpage_blog_css = '
+
+		#front-page-blog-section {
+			background-color:' . $fp_blog_bg_color . ';
+		}
+		#front-page-blog .media-object-section h3, 
+			.media-object-section p {
+						color:' . $fp_blog_text_color .';
+		}';
+
+		if( $frontpage_blog_css ) {
+			wp_add_inline_style( $frontpage_blog, $frontpage_blog_css );
+		}
+
+		$frontpage_blog_h3 = 'main-stylesheet';
+		$frontpage_blog_css_h3 = '';
+
+		$fp_blog_h3_color = get_theme_mod('fp-blog-h3-color');
+
+		$frontpage_blog_css_h3 = '
+
+		 #front-page-blog h3 a {
+			color:' . $fp_blog_h3_color . ';
+		}';
+
+		if( $frontpage_blog_css_h3 ) {
+			wp_add_inline_style( $frontpage_blog_h3, $frontpage_blog_css_h3 );
+		}
+
+		$frontpage_blog_link = 'main-stylesheet';
+		$frontpage_blog_link_color = '';
+
+		$fp_blog_link_color = get_theme_mod('fp-blog-link-color');
+
+		$frontpage_blog_link_color = '
+
+		 #front-page-blog a {
+			color:' . $fp_blog_link_color . ';
+		}';
+
+		if( $frontpage_blog_link_color ) {
+			wp_add_inline_style( $frontpage_blog_link, $frontpage_blog_link_color );
+		}
+
+		$frontpage_title_link = 'main-stylesheet';
+		$frontpage_title_link_color = '';
+
+		$fp_blog_title_color = get_theme_mod('fp-blog-title-color');
+
+		$frontpage_title_link_color = '
+
+		 h2.blog-news {
+			color:' . $fp_blog_title_color . ';
+		}';
+
+		if( $frontpage_title_link_color ) {
+			wp_add_inline_style( $frontpage_title_link, $frontpage_title_link_color );
+		}
+
+
+
+
+
 	} 
   endif; 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );

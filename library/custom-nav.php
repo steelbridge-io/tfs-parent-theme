@@ -953,6 +953,145 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+		// Blog Excerpt Background Color Setting
+		$wp_customize->add_setting('fp-blog-bg-color', array(
+				'default' => '#f5f5f5',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Blog Excerpt Background Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'fp-blog-bg-color', array(
+					'label' => __('Blog Section Background Color'),
+					'priority' => 20,
+					'section' => 'fp_color_section',
+					'settings' => 'fp-blog-bg-color'
+				)
+			)
+		);
+		// Blog Excerpt Background Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-blog-bg-color', array(
+				'selector' => '.blog-selective-refresh',
+				'settings' => array('fp-blog-bg-color'),
+				'render_callback' => 'output'
+			)
+		);
+
+		// Blog Excerpt Text Color Setting
+		$wp_customize->add_setting('fp-blog-text-color', array(
+				'default' => '#000',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Blog Excerpt Text Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'fp-blog-text-color', array(
+					'label' => __('Blog Section Text Color'),
+					'priority' => 20,
+					'section' => 'fp_color_section',
+					'settings' => 'fp-blog-text-color'
+				)
+			)
+		);
+		// Blog Excerpt Text Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-blog-text-color', array(
+				'selector' => '.blog-selective-refresh',
+				'settings' => array('fp-blog-text-color'),
+				'render_callback' => 'output'
+			)
+		);
+
+		// Blog Excerpt Text Color Setting
+		$wp_customize->add_setting('fp-blog-h3-color', array(
+				'default' => '#000',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Blog Excerpt Text Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'fp-blog-h3-color', array(
+					'label' => __('Blog Title Color'),
+					'priority' => 20,
+					'section' => 'fp_color_section',
+					'settings' => 'fp-blog-h3-color'
+				)
+			)
+		);
+		// Blog Excerpt Text Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-blog-h3-color', array(
+				'selector' => '.blog-selective-refresh',
+				'settings' => array('fp-blog-h3-color'),
+				'render_callback' => 'output'
+			)
+		);
+
+		// Blog Excerpt Link Color Setting
+		$wp_customize->add_setting('fp-blog-link-color', array(
+				'default' => '#1779ba',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Blog Excerpt Link Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'fp-blog-link-color', array(
+					'label' => __('Blog Section Link Color'),
+					'priority' => 20,
+					'section' => 'fp_color_section',
+					'settings' => 'fp-blog-link-color'
+				)
+			)
+		);
+		// Blog Excerpt Text Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-blog-link-color', array(
+				'selector' => '.blog-selective-refresh',
+				'settings' => array('fp-blog-link-color'),
+				'render_callback' => 'output'
+			)
+		);
+		// Blog Section Title Color Setting
+		$wp_customize->add_setting('fp-blog-title-color', array(
+				'default' => '#f5f5f5',
+				'type' => 'theme_mod',
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport' => 'postMessage'
+			)
+		);
+		// Blog Section Title Color Control
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'fp-blog-title-color', array(
+					'label' => __('Blog Section Title Color'),
+					'priority' => 20,
+					'section' => 'fp_color_section',
+					'settings' => 'fp-blog-title-color'
+				)
+			)
+		);
+		// Blog Section Title Color Selective Refresh
+		$wp_customize->selective_refresh->add_partial('fp-blog-title-color', array(
+				'selector' => '.blog-news-refresh',
+				'settings' => array('fp-blog-title-color'),
+				'render_callback' => 'output'
+			)
+		);
+
 		///////////////// PARALLAX IMAGES
 
 		// Adds Parallax Section

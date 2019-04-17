@@ -323,3 +323,29 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 	}
 	add_shortcode('gallery', 'foundationpress_gallery');
 endif;
+
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = sprintf( '<a class="&nbsp;read-more" href="%1$s">%2$s</a>',
+			get_permalink( get_the_ID() ),
+			__( '<br>...Read More Here', 'textdomain' )
+		);
+	}
+
+	return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup()
+{
+	add_image_size('custom-size', 220, 180, true);
+	// Image size for single posts
+	add_image_size( 'single-post-thumbnail', 600, 300, true );
+}

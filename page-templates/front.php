@@ -302,31 +302,79 @@ get_header(); ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
-				<footer>
+
+			<!--	<footer>
 					<?php
-					wp_link_pages(
+				/*	wp_link_pages(
 						array(
 							'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
 							'after'  => '</p></nav>',
 						)
-					);
+					); */
 					?>
-					<p><?php the_tags(); ?></p>
-				</footer>
-				<?php do_action( 'foundationpress_page_before_comments' ); ?>
-				<?php comments_template(); ?>
-				<?php do_action( 'foundationpress_page_after_comments' ); ?>
+					<p><?php //the_tags(); ?></p>
+				</footer> -->
+				<?php //do_action( 'foundationpress_page_before_comments' ); ?>
+				<?php //comments_template(); ?>
+				<?php//do_action( 'foundationpress_page_after_comments' ); ?>
 			</div>
 
 		</div>
-
 	</section>
 <?php endwhile; ?>
+
+<!-- BLOG -->
+<?php
+$numberofposts = array( 'numberposts'	=> 1 );
+$myposts = get_posts($numberofposts);
+foreach($myposts as $post) : setup_postdata($post);
+?>
+<div id="front-page-blog-section">
+	<h2 class="blog-news">News From The River</h2>
+	<span class="blog-news-refresh"></span>
+<div id="front-page-blog" class="blog">
+<div class="media-object stack-for-small">
+	<span class="blog-selective-refresh"></span>
+	<div class="top media-object-section">
+		<div class="thumbnail">
+			<?php
+			the_post_thumbnail('single-post-thumbnail');
+			?>
+		</div>
+	</div>
+	<div class="media-object-section blog-text-section">
+		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<?php the_excerpt(); ?>
+	</div>
+	<?php endforeach; ?>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- END POSTS -->
 <?php do_action( 'foundationpress_after_content' ); ?>
 
-<div class="section-divider">
-	<hr />
-</div>
 <div id="parallax-container">
 	<?php $parallax_1 = get_theme_mod('fp-topparallax-img'); ?>
 	<div id="parallaxone" class="parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="<?php echo $parallax_1; ?>">

@@ -26,6 +26,11 @@ if( is_customize_preview() ) {
 		$mk_grid_font_color					= get_theme_mod('mk-grid-font-color');
 		$mk_grid_button_color				= get_theme_mod('mk-grid-button-color');
 		$mk_grid_button_font_color	= get_theme_mod('mk-grid-button-font-color');
+		$fp_blog_bg_color						= get_theme_mod('fp-blog-bg-color');
+		$fp_blog_text_color					= get_theme_mod('fp-blog-text-color');
+		$fp_blog_h3_color						= get_theme_mod('fp-blog-h3-color' );
+		$fp_blog_link_color 				= get_theme_mod('fp-blog-link-color');
+		$fp_blog_title_color				= get_theme_mod('fp-blog-title-color');
 
 		echo '#top-cta {
 						background-color: ' . $fptopbgcolor_color . ';
@@ -98,6 +103,22 @@ if( is_customize_preview() ) {
 					}' .
 					'.mk-grid.round.button.small {
 						color:' . $mk_grid_button_font_color .';
+					}' .
+					'#front-page-blog-section {
+						background-color:' . $fp_blog_bg_color . ';
+					}' .
+					'#front-page-blog .media-object-section h3, 
+					.media-object-section p {
+						color:' . $fp_blog_text_color .';
+					}' .
+					' #front-page-blog h3 a {
+						color:' . $fp_blog_h3_color . ';
+					}' .
+					'#front-page-blog a {
+						color:' . $fp_blog_link_color  . ';
+					}' .
+					'h2.blog-news {
+						color:' . $fp_blog_title_color .';
 					}'
 		;
 
