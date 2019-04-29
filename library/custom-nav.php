@@ -70,6 +70,20 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			}
 		));
 
+		$wp_customize->add_setting( 'adds_slider_caption', array(
+			'capability' => 'edit_theme_options',
+			'type'       => 'theme_mod',
+			'sanitize_callback' => 'themeslug_sanitize_checkbox',
+		) );
+
+		$wp_customize->add_control( 'adds_slider_caption', array(
+			'type' => 'checkbox',
+			'section' => 'fp_top_slider',
+			'label' => __( 'Add Captions To Slider?' ),
+			'priority'	=> 10,
+			'description' => __( 'Checking this box will add captions to the bottom of slider images.' ),
+		) );
+
 		// Slider Logo
 		$wp_customize->add_setting('fp-logo', array(
 			'default' => '',
