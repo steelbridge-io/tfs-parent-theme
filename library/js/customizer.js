@@ -107,6 +107,37 @@
     });
   });
 
+  wp.customizer( 'facebook_icon_bawx_link', function( value ) {
+    value.bind( function( newval ) {
+      $( '#footer-credentials a.soc-1').url( newval );
+    });
+  });
+
+  wp.customize( 'twitter_icon_bawx_link', function( value ) {
+    value.bind( function( newval ) {
+      $( '#footer-credentials a.soc-2' ).url( newval );
+    });
+  });
+
+  wp.customize( 'instagram_icon_bawx_link', function( value ) {
+    value.bind( function( newval ) {
+      $( '#footer-credentials a.soc-3' ).url( newval );
+    });
+  });
+
+  wp.customize( 'youtube_icon_bawx_link', function( value ) {
+    value.bind( function( newval ) {
+      $( '#footer-credentials a.soc-4' ).url( newval );
+    });
+  });
+
+  wp.customize( 'email_icon_bawx_link', function( value ) {
+    value.bind( function( newval ) {
+      $( '#footer-credentials a.soc-5' ).url( newval );
+    });
+  });
+
+
 })(jQuery);
 
 

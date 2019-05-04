@@ -15,6 +15,8 @@ if (! function_exists('wpt_register_theme_customizer')) :
 	function wpt_register_theme_customizer($wp_customize)
 	{
 
+		include ('customizer-options/footer-options.php');
+
 		// Create custom panels
 		$wp_customize->add_panel(
 			'mobile_menu_settings', array(
@@ -389,7 +391,7 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 		// Front Page Top Widget Text Color Selective Refresh
-		$wp_customize->selective_refresh->add_partial('fp-top-widget-txt-color', array(
+		 $wp_customize->selective_refresh->add_partial('fp-top-widget-txt-color', array(
 				'selector' => '.topcta-text-color',
 				'settings' => 'fp-top-widget-txt-color',
 				'render_callback' => 'output'
@@ -1358,6 +1360,7 @@ if (! function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+
 		////////////// Sidbar Right Theme
 
 		$wp_customize->add_section('sidebar-rt-section', array(
@@ -1561,7 +1564,10 @@ function theme_slug_sanitize_html( $input ) {
 			'href' => array(),
 			'title' => array(),
 			'target' => array(),
-			'class' => array()
+			'class' => array(),
+			'www'	=> array(),
+			'http' => array(),
+			'https'	=> array(),
 		),
 		'br' => array(),
 		'span' => array(),

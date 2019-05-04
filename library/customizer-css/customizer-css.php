@@ -13,24 +13,26 @@ if( is_customize_preview() ) {
 	{
 		echo '<style>';
 
-		$fptopbgcolor_color 				= get_theme_mod('fp-top-widget-bg-color' );
-		$fptoptxtcolor							= get_theme_mod('fp-top-widget-txt-color' );
-		$fp_topcard_label_color			= get_theme_mod('fp-topcard-label-color' );
-		$fp_topcard_bg_color				= get_theme_mod('fp-topcard-bg-color' );
-		$fp_topcard_txt_color 			= get_theme_mod('fp-topcard-txt-color' );
-		$fp_bottomcard_img					= get_theme_mod('fp-bottomcard-img' );
-		$fp_bottomcard_label_color 	= get_theme_mod('fp-bottomcard-label-color' );
-		$fp_bottomcard_bg_color 		= get_theme_mod('fp-bottomcard-bg-color' );
-		$fp_bottomcard_txt_color 		= get_theme_mod('fp-bottomcard-txt-color' );
-		$mk_grid_bg_color 					= get_theme_mod('mk-grid-bg-color');
-		$mk_grid_font_color					= get_theme_mod('mk-grid-font-color');
-		$mk_grid_button_color				= get_theme_mod('mk-grid-button-color');
-		$mk_grid_button_font_color	= get_theme_mod('mk-grid-button-font-color');
-		$fp_blog_bg_color						= get_theme_mod('fp-blog-bg-color');
-		$fp_blog_text_color					= get_theme_mod('fp-blog-text-color');
-		$fp_blog_h3_color						= get_theme_mod('fp-blog-h3-color' );
-		$fp_blog_link_color 				= get_theme_mod('fp-blog-link-color');
-		$fp_blog_title_color				= get_theme_mod('fp-blog-title-color');
+		$fptopbgcolor_color 					= get_theme_mod('fp-top-widget-bg-color' );
+		$fptoptxtcolor								= get_theme_mod('fp-top-widget-txt-color' );
+		$fp_topcard_label_color				= get_theme_mod('fp-topcard-label-color' );
+		$fp_topcard_bg_color					= get_theme_mod('fp-topcard-bg-color' );
+		$fp_topcard_txt_color 				= get_theme_mod('fp-topcard-txt-color' );
+		$fp_bottomcard_img						= get_theme_mod('fp-bottomcard-img' );
+		$fp_bottomcard_label_color 		= get_theme_mod('fp-bottomcard-label-color' );
+		$fp_bottomcard_bg_color 			= get_theme_mod('fp-bottomcard-bg-color' );
+		$fp_bottomcard_txt_color 			= get_theme_mod('fp-bottomcard-txt-color' );
+		$mk_grid_bg_color 						= get_theme_mod('mk-grid-bg-color');
+		$mk_grid_font_color						= get_theme_mod('mk-grid-font-color');
+		$mk_grid_button_color					= get_theme_mod('mk-grid-button-color');
+		$mk_grid_button_font_color		= get_theme_mod('mk-grid-button-font-color');
+		$fp_blog_bg_color							= get_theme_mod('fp-blog-bg-color');
+		$fp_blog_text_color						= get_theme_mod('fp-blog-text-color');
+		$fp_blog_h3_color							= get_theme_mod('fp-blog-h3-color' );
+		$fp_blog_link_color 					= get_theme_mod('fp-blog-link-color');
+		$fp_blog_title_color					= get_theme_mod('fp-blog-title-color');
+		$socialmedia_icon_color				= get_theme_mod('socialmedia_icon_color');
+		$socialmedia_iconhover_color	= get_theme_mod('socialmedia_iconhover_color');
 
 		echo '#top-cta {
 						background-color: ' . $fptopbgcolor_color . ';
@@ -119,6 +121,12 @@ if( is_customize_preview() ) {
 					}' .
 					'h2.blog-news {
 						color:' . $fp_blog_title_color .';
+					}' .
+					'#footer-credentials.social-icons-footer a {
+						color:' . $socialmedia_icon_color . ';
+					}' .
+					'#footer-credentials.social-icons-footer a:hover {
+						color:'. $socialmedia_iconhover_color .';
 					}'
 		;
 
